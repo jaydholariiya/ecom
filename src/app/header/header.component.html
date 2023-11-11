@@ -1,0 +1,30 @@
+<nav class="navbar">
+    <a class="logo" routerLink="/"><h1>E-COMM</h1></a>
+   
+    <div style="text-align: center;" *ngIf="menuHeader == 'default'" class="search-bar" >
+        <input type="text" placeholder="Search">
+        <button>Search</button>
+    </div>
+    <div [ngSwitch]="menuHeader">
+    <ul class="nav-list" *ngSwitchCase="'default'" >
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/seller-auth">Seller</a></li>
+        <li><a routerLink="">Login</a></li>
+        <li><a routerLink="">Cart (0)</a></li>
+        <li><a routerLink="/seller-home"></a></li>
+        
+    </ul>
+
+    <ul class="nav-list" *ngSwitchCase="'seller'" >
+        <li><a routerLink="/seller-home">Product List</a></li>
+        <li><a routerLink="/seller-add-product">Add Product</a></li>
+        <li><a (click)="logout()">LogOut</a></li>
+        <li><h3 class="sellerName" style="color: #007bff;">{{sellerName  | titlecase}}</h3></li>
+        <li><h3 class="sellerName" style="color: #007bff;">{{sellerEmail  | titlecase}}</h3></li>
+        <!-- <li><a routerLink="/seller-home"></a></li> -->
+        
+    </ul>
+
+
+</div>
+</nav>

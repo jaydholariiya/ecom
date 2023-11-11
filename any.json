@@ -1,0 +1,150 @@
+{
+  "product": [
+    {
+      "name": "6",
+      "price": 6,
+      "color": "6",
+      "category": "6",
+      "description": "66",
+      "image": "6",
+      "id": 6
+    },
+    {
+      "name": "1",
+      "price": 1,
+      "color": "1",
+      "category": "1",
+      "description": "1",
+      "image": "1",
+      "id": 7
+    }
+  ],
+  "seller": [
+    {
+      "name": "jay",
+      "email": "jay@gmail.com",
+      "password": "jay123",
+      "id": 1
+    },
+    {
+      "name": "Neel Bhalodiya",
+      "email": "neel@gmail.com",
+      "password": "neel123",
+      "id": 2
+    },
+    {
+      "name": "davendra",
+      "email": "davendra@gmail.com",
+      "password": "davendra",
+      "id": 4
+    },
+    {
+      "name": "abhi",
+      "email": "abhi@gmail.com",
+      "password": "abhi",
+      "id": 5
+    },
+    {
+      "name": "papa",
+      "email": "papa@g.com",
+      "password": "papa",
+      "id": 6
+    },
+    {
+      "name": "mom",
+      "email": "mom@g.com",
+      "password": "mom",
+      "id": 7
+    },
+    {
+      "name": "tpn",
+      "email": "tpn@g.com",
+      "password": "tpn",
+      "id": 8
+    },
+    {
+      "name": "nice",
+      "email": "nice@g.com",
+      "password": "nice",
+      "id": 9
+    },
+    {
+      "name": "jay dholariya ",
+      "email": "jay@g.com",
+      "password": "jay",
+      "id": 10
+    },
+    {
+      "name": "hiii",
+      "email": "hiii@g.com",
+      "password": "hiii",
+      "id": 11
+    },
+    {
+      "name": "happy",
+      "email": "happy@gmail.com",
+      "password": "happy",
+      "id": 12
+    },
+    {
+      "name": "yash",
+      "email": "yash@gmail.com",
+      "password": "yash",
+      "id": 13
+    },
+    {
+      "name": "i'm jay dholariya",
+      "email": "jd123@gmail.com",
+      "password": "jd123",
+      "id": 14
+    },
+    {
+      "name": "king",
+      "email": "king@g.com",
+      "password": "king",
+      "id": 15
+    },
+    {
+      "name": "anna",
+      "email": "anna@g.com",
+      "password": "anna",
+      "id": 16
+    },
+    {
+      "name": "1",
+      "email": "1",
+      "password": "1",
+      "id": 17
+    },
+    {
+      "name": "jjj",
+      "email": "jjj@g.com",
+      "password": "jjj",
+      "id": 18
+    },
+    {
+      "name": "tu",
+      "email": "tu@g.c",
+      "password": "tu",
+      "id": 19
+    },
+    {
+      "name": "uk",
+      "email": "uk@g.c",
+      "password": "uk",
+      "id": 20
+    },
+    {
+      "name": "111",
+      "email": "111@g.c",
+      "password": "111",
+      "id": 21
+    },
+    {
+      "name": "jay",
+      "email": "jay@gmail.com",
+      "password": "jay",
+      "id": 22
+    }
+  ]
+}
