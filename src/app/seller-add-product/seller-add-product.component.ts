@@ -24,7 +24,10 @@ export class SellerAddProductComponent implements OnInit {
         else{
             this.addProductMessage = "Something went wrong! Try again.";
         }
-        setTimeout(()=>{ this.addProductMessage = undefined },3000);
+        setTimeout(()=>{ this.addProductMessage = undefined;
+        
+        
+        },3000);
       }
     );
     }
