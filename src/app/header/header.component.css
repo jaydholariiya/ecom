@@ -6,8 +6,6 @@
     font-family: Arial, sans-serif;
 }
 
-
-
 /* Style the navbar */
 .navbar {
     background-color: #123;
@@ -15,39 +13,33 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    /* margin: 0;padding: 0; */
 }
 
 /* Style the logo */
 .logo {
-    /* text-decoration: none; */
     color: #fff;
     text-decoration: none;
     padding-left: 20px;
 }
 
-.logo :hover{
+.logo:hover {
     color: #007bff;
-    
 }
 
 .logo img {
     width: 40px; /* Adjust the size as needed */
     height: auto;
-
 }
 
 /* Style the navigation list */
 .nav-list {
     list-style: none;
     display: flex;
-    flex-wrap: wrap; /*Allow items to wrap to the next line on small screens
-*/
+    flex-wrap: wrap;
 }
 
 .nav-list li {
     margin-right: 25px;
-    /* margin-bottom: 2px; Add spacing between list items */
 }
 
 .nav-list a {
@@ -86,13 +78,15 @@
     display: flex;
     align-items: center;
     padding-left: 100px;
+    /* position: absolute; */
+
+    
 }
 
 .search-bar input[type="text"] {
     padding: 6px;
     border: none;
     border-radius: 5px;
-    
 }
 
 .search-bar button {
@@ -105,33 +99,39 @@
     cursor: pointer;
 }
 
-.sellerName:hover{
+.sellerName:hover {
     color: white;
 }
 
+
 /* Media query for responsive design */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 420px) {
     .navbar {
-        flex-direction: column; /* Stack items vertically on small screens */
+        flex-direction: column;
     }
 
     .nav-list {
-        flex-direction: column; /* Stack menu items vertically */
-        text-align: center; /* Center-align menu items */
+        flex-direction: column;
+        text-align: center;
     }
 
     .nav-list li {
         margin-right: 0;
-        margin-bottom: 10px; /* Add spacing between list items */
+        margin-bottom: 10px;
     }
 
     .search-bar {
         margin-top: 10px;
-        padding-right: 100px;
-        margin-bottom: 10px; /* Add spacing between menu and search bar on small screens */
+        padding-left: 20px; /* Adjust padding for better spacing */
+        margin-bottom: 10px;
     }
 
-    .sellerName:hover{
+    .search-bar input[type="text"] {
+        width: 100%; /* Make the input expand to full width */
+        padding: 10px; /* Increase padding for touch-friendly use */
+    }
+
+    .sellerName:hover {
         color: white;
     }
 }

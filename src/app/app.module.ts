@@ -11,6 +11,12 @@ import { SellerHomeComponent } from './seller-home/seller-home.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { FormsModule } from '@angular/forms';
 import { SellerUpdateProductComponent } from './seller-update-product/seller-update-product.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SearchComponent } from './search/search.component';
+import { FooterComponent } from './footer/footer.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { UserAuthComponent } from './user-auth/user-auth.component';
+import { UserComponent } from './services/user/user.component';
 // import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
@@ -21,7 +27,12 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
     SellerAuthComponent,
     SellerHomeComponent,
     ErrorPageComponent,
-    SellerUpdateProductComponent
+    SellerUpdateProductComponent,
+    SearchComponent,
+    FooterComponent,
+    ProductDetailsComponent,
+    UserAuthComponent,
+    UserComponent
   ],
   imports: [
     
@@ -29,6 +40,7 @@ import { SellerUpdateProductComponent } from './seller-update-product/seller-upd
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    NgbModule,
     // FontAwesomeModule
   ],
   providers: [],

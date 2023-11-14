@@ -1,0 +1,26 @@
+<div class="done">
+    <form #userSignUp="ngForm" (ngSubmit)="UsersignUp(userSignUp.value)" >
+        <h1 class="form-heading">User Auth</h1>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" ngModel required>
+        </div>
+      
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email"  ngModel required>
+        </div>
+      
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" id="password" name="password" ngModel required>
+        </div>
+      
+        <button>Sign Up</button>
+        <br><br>
+        <b><a style="color: darkslateblue; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;" >If Already Login Clicking ..</a></b>
+      </form>
+    
+      
+     
+    </div>

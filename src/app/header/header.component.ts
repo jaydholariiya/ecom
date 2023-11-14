@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
+import { addproductDataType } from '../data-type';
+import { ProductService } from '../services/product.service';
 
 @Component({
   selector: 'app-header',
@@ -11,7 +13,8 @@ export class HeaderComponent implements OnInit {
     sellerName : any = "";
     data1 : any = "";
     sellerEmail : any = ""; 
-  constructor(private router : Router) { }
+    searchResult : undefined | addproductDataType[];
+  constructor(private router : Router , private product : ProductService) { }
 
   ngOnInit(): void {
     this.router.events.subscribe((val : any)=>{
@@ -39,9 +42,31 @@ export class HeaderComponent implements OnInit {
     })
   }
 
+  submitSearch(val : String){
+    this.router.navigate([`search/${val}`]);
+    window.location.href = `http://localhost:4200/search/${val}`;
+    // setTimeout(()=>{ this.router.navigate([`search/${val}`]);},3000)
+    // console.warn("value is :" + val);
+   
+  }
+
   logout(){
     localStorage.removeItem('seller');
     this.router.navigate(['/']);
+  }
+
+  searchProduct(query : KeyboardEvent){
+    if(query){
+        const ele = query.target as HTMLInputElement;
+        console.log(ele.value);
+        this.product.searchProduct(ele.value).subscribe((result)=>{
+            console.log(result);
+            this.searchResult = result;
+            
+        })
+        
+
+    }
   }
 
 }

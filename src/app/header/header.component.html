@@ -1,15 +1,23 @@
 <nav class="navbar">
     <a class="logo" routerLink="/"><h1>E-COMM</h1></a>
    
+
     <div style="text-align: center;" *ngIf="menuHeader == 'default'" class="search-bar" >
-        <input type="text" placeholder="Search">
-        <button>Search</button>
+        <input #searchInput (keyup)="searchProduct($event)" class="search-input" type="text" placeholder="Search"/>
+        
+        <button (click)="submitSearch(searchInput.value)">Search</button>
+      
     </div>
+    <!-- <ul style="padding-top: 50px;  overflow-x: auto; display: list-item; z-index: 10; top: 40px; " class="suggest" *ngFor="let item of searchResult">
+        <li style="color: white;">{{item.name}}</li>
+    </ul> -->
+   
+  
     <div [ngSwitch]="menuHeader">
     <ul class="nav-list" *ngSwitchCase="'default'" >
         <li><a routerLink="/">Home</a></li>
         <li><a routerLink="/seller-auth">Seller</a></li>
-        <li><a routerLink="">Login</a></li>
+        <li><a routerLink="/user-auth">Login</a></li>
         <li><a routerLink="">Cart (0)</a></li>
         <li><a routerLink="/seller-home"></a></li>
         
@@ -26,5 +34,7 @@
     </ul>
 
 
+
 </div>
+
 </nav>
