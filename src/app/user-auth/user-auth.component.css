@@ -32,21 +32,24 @@ form {
     margin-bottom: 5px;
     font-size: 14px;
     font-weight: 600;
+    margin-left: 10px;
   }
   
   /* Style the input fields */
   input {
     width: 95%;
     padding: 10px;
+    margin-left: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
     margin-bottom: 10px ;
+    
   }
   
   /* Style the submit button */
   button {
-    background-color: #007bff;
+    background-color: #123;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -54,16 +57,17 @@ form {
     font-size: 16px;
     cursor: pointer;
     transition: 0.3s ease;
+    margin-left:10px ;
   }
   
   button:hover {
-    background-color: #0056b3;
+    background-color: #00000090;
   }
   
   /* Add animations to input fields and button */
   input:focus {
     outline: none;
-    border: 2px solid #007bff;
+    border: 2px solid #123;
     animation: input-glow 0.5s ease-in-out forwards;
   }
   
@@ -78,7 +82,7 @@ form {
       border-color: #ccc;
     }
     100% {
-      border-color: #007bff;
+      border-color: #123;
     }
   }
   
@@ -133,7 +137,7 @@ form {
     
 
     button {
-        background-color: #007bff;
+        background-color: #123;
         color: #fff;
         padding: 10px 20px;
         border: none;
@@ -144,7 +148,7 @@ form {
     }
 
     button:hover {
-        background-color: #0056b3;
+        background-color: #111;
     }
 
     button:active {

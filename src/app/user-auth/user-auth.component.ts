@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { userAuthDataType } from '../data-type';
+import { userAuthDataType, userLoginDataType } from '../data-type';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-auth',
@@ -7,13 +8,21 @@ import { userAuthDataType } from '../data-type';
   styleUrls: ['./user-auth.component.css']
 })
 export class UserAuthComponent implements OnInit {
-
-  constructor() { }
+    show = true;
+  constructor(private user : UserService) { }
 
   ngOnInit(): void {
   }
   UsersignUp(val : userAuthDataType){
-    console.log("usersignup is : " , val);
-    
+     this.user.UsersignUp(val);
+  }
+  LoginUser(val : userLoginDataType){
+     this.user.LoginUser(val);
+  }
+  openSignUp(){
+    this.show = false;
+  }
+  openLogin() {
+    this.show = true;
   }
 }

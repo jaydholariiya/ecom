@@ -26,3 +26,9 @@ export interface userAuthDataType{
     email : string,
     password : string
 }
+
+export interface userLoginDataType{
+   
+    email : string,
+    password : string
+}

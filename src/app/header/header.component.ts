@@ -11,8 +11,12 @@ import { ProductService } from '../services/product.service';
 export class HeaderComponent implements OnInit {
     menuHeader : String = "default";
     sellerName : any = "";
+    userName : any = '';
     data1 : any = "";
+    data : any = "";
     sellerEmail : any = ""; 
+    userEmail : any = "";
+    usersInfo : string = "";
     searchResult : undefined | addproductDataType[];
   constructor(private router : Router , private product : ProductService) { }
 
@@ -23,15 +27,31 @@ export class HeaderComponent implements OnInit {
             if(localStorage.getItem('seller') && val.url.includes('seller')){
                 console.warn("seller in");
                 this.menuHeader = 'seller';
-                let sellerStorage = localStorage.getItem('seller');
-                let sellerData = sellerStorage && JSON.parse(sellerStorage)[0];
-                this.sellerName = sellerData.email;
-
-
                 this.data1  = localStorage.getItem('seller');
                 let parsedData = JSON.parse(this.data1);
+                if (parsedData && parsedData['email']) {
                 this.sellerEmail = parsedData['email'];
-                console.warn(this.sellerEmail);
+
+                console.log(this.sellerEmail);
+                }
+            }
+            else if(localStorage.getItem('user')){
+                console.warn("user in");
+                this.menuHeader = 'user';
+                this.data = localStorage.getItem('user');
+                let parsedData = JSON.parse(this.data);
+      
+                if (parsedData && parsedData['email']) {
+                  this.userEmail = parsedData['email'];
+                  console.log("User Email:", this.userEmail);
+         
+
+                }
+             
+                
+                
+
+
             }
             else{
                 this.menuHeader = 'default';
@@ -54,6 +74,11 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('seller');
     this.router.navigate(['/']);
   }
+
+  userlogout(){
+    localStorage.removeItem('user');
+    this.router.navigate(['/user-auth']);
+}
 
   searchProduct(query : KeyboardEvent){
     if(query){
