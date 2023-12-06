@@ -22,18 +22,42 @@ export class UserService {
     })
   }
 
-  LoginUser(data : userLoginDataType){
-    this.http.get<userAuthDataType[]>(`http://localhost:3000/user?password=${data.password}&email=${data.email}`,{observe : 'response'}).subscribe((result)=>
-    {
-    console.warn("data login successfully" , result);
-    if(result && result.body){
-        localStorage.setItem('user' , JSON.stringify(result.body[0]))
-        this.route.navigate(['/']);
-        console.warn(result);
+//   LoginUser(data : userLoginDataType){
+//     this.http.get<userAuthDataType[]>(`http://localhost:3000/user?password=${data.password}&email=${data.email}`,{observe : 'response'}).subscribe((result)=>
+//     {
+//     console.warn("data login successfully" , result);
+//     if(result && result.body){
+//         localStorage.setItem('user' , JSON.stringify(result.body[0]))
+//         this.route.navigate(['/']);
+//         console.warn(result);
         
-    }
-    })
+//     }
+//     })
+//   }
+
+
+  LoginUser(data : userLoginDataType){
+    this.http.get(`http://localhost:3000/user?email=${data.email}&password=${data.password}`,{observe : 'response'}).subscribe((result : any)=>{
+        console.warn(result);
+
+        if(result && result.body && result.body.length){
+            // this.isSellerLoggedIn.next(true);
+            // localStorage.setItem("user",JSON.stringify(result.body));
+            localStorage.setItem('user' , JSON.stringify(result.body[0]))
+            this.route.navigate(['/']);
+            console.warn("result" , result);
+            // this.router.navigate(['seller-home']);
+        }
+        else{
+            console.warn("Login Failed");
+            // this.isLogin.emit(true);
+            
+        }
+        
+    });
+
+
+
   }
+
 }
-
-

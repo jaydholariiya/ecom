@@ -1,5 +1,8 @@
+*{
+    font-family: tahoma;
+}
 .main {
-    font-family: Arial, sans-serif;
+    font-family: tahoma;
     /* background-color: #f4f4f4; */
     margin: 30px;
     padding: 0;

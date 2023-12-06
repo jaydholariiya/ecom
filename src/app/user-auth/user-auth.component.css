@@ -1,13 +1,13 @@
 .done{
-    margin-top: 75px;
+    margin-top: 30px;
 }
 form {
     width: 500px;
     margin: 50px auto;
-    background-color: #fff;
+    background-color: #00000030;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(1, 1, 1, 0.2);
+    box-shadow: 0 0 20px rgba(1, 1, 1, 0.6);
     
   }
   
@@ -23,8 +23,9 @@ form {
   }
 
   *{
-    font-family: Arial, sans-serif;
+    font-family: Tahoma;
   }
+
   
   /* Style the labels */
   label {
@@ -37,10 +38,12 @@ form {
   
   /* Style the input fields */
   input {
+    background-color: #00000030;
+    box-shadow: 0 0 40px rgba(1, 1, 1, 0.2);
     width: 95%;
     padding: 10px;
     margin-left: 10px;
-    border: 1px solid #ccc;
+    /* border: 1px solid #123; */
     border-radius: 5px;
     font-size: 14px;
     margin-bottom: 10px ;
@@ -67,7 +70,7 @@ form {
   /* Add animations to input fields and button */
   input:focus {
     outline: none;
-    border: 2px solid #123;
+    border: 2px solid #00000090;
     animation: input-glow 0.5s ease-in-out forwards;
   }
   
@@ -82,7 +85,7 @@ form {
       border-color: #ccc;
     }
     100% {
-      border-color: #123;
+      border-color: #00000090;
     }
   }
   
@@ -130,7 +133,7 @@ form {
 
     input:focus {
         outline: none;
-        border: 2px solid #007bff;
+        border: 2px solid #00000090;
         animation: input-glow 0.5s ease-in-out forwards;
     }
 

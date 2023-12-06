@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { addproductDataType } from '../data-type';
 
 @Injectable({
@@ -7,6 +7,7 @@ import { addproductDataType } from '../data-type';
 })
 export class ProductService {
     // addProductMessage : string | undefined;
+    cartData = new EventEmitter<addproductDataType[] | []>();
   constructor(private http : HttpClient) { }
   addProduct(data : addproductDataType){
     console.warn(data);
@@ -43,5 +44,37 @@ TrendingProduct(){
 searchProduct(query : string){
     return this.http.get<addproductDataType[]>(`http://localhost:3000/product?q=${query}`);
 }
+
+localAddToCart(data : addproductDataType){
+    let cartData = [];
+    let localcart = localStorage.getItem('localCart')
+    if(!localcart){
+        localStorage.setItem('localCart' , JSON.stringify([data]))
+    }
+    else{
+        console.warn("not added");
+        cartData = JSON.parse(localcart)
+        cartData.push(data);
+        console.warn("cart Data " , cartData);
+        
+        localStorage.setItem('localCart' , JSON.stringify(cartData));
+        
+        
+        
+    }
+    this.cartData.emit(cartData);
+}
+
+removeItemCard(data : number){
+    let getData = localStorage.getItem('localCart');
+    if(getData){
+        let items : addproductDataType[] = JSON.parse(getData);
+        items = items.filter((item : addproductDataType)=> data!==item.id );
+        localStorage.setItem('localCart',JSON.stringify(items))
+        this.cartData.emit(items);
+    }
+    
+}
+
 }
 

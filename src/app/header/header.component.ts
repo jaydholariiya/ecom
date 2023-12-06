@@ -9,6 +9,7 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+    cartItem:number = 0;
     menuHeader : String = "default";
     sellerName : any = "";
     userName : any = '';
@@ -47,6 +48,7 @@ export class HeaderComponent implements OnInit {
          
 
                 }
+
              
                 
                 
@@ -60,6 +62,14 @@ export class HeaderComponent implements OnInit {
             }
         }
     })
+    let cartData = localStorage.getItem('localCart');
+   if( cartData ){
+    this.cartItem = JSON.parse(cartData).length;
+    
+   }
+   this.product.cartData.subscribe((result)=>{
+    this.cartItem = result.length
+   })
   }
 
   submitSearch(val : String){

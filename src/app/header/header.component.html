@@ -2,7 +2,7 @@
     <a class="logo" routerLink="/"><h1>E-COMM</h1></a>
    
 
-    <div style="text-align: center;" *ngIf="menuHeader == 'default'" class="search-bar" >
+    <div style="text-align: center;" *ngIf="menuHeader === 'user' || menuHeader === 'default'" class="search-bar" >
         <input #searchInput (keyup)="searchProduct($event)" class="search-input" type="text" placeholder="Search"/>
         
         <button (click)="submitSearch(searchInput.value)">Search</button>
@@ -18,7 +18,7 @@
         <li><a routerLink="/">Home</a></li>
         <li><a routerLink="/seller-auth">Seller</a></li>
         <li><a routerLink="/user-auth">Login</a></li>
-        <li><a routerLink="">Cart (0)</a></li>
+      
         <li><a routerLink="/seller-home"></a></li>
         
     </ul>
@@ -27,9 +27,10 @@
     <ul class="nav-list" *ngSwitchCase="'user'" >
         <li><a routerLink="/">Home</a></li>
         <li><a routerLink="/seller-auth">Seller</a></li>
-        <li><h3 class="sellerName" style="color: #007bff;">{{userEmail }}</h3></li>
-        <li><h3 class="sellerName" style="color: #007bff;">{{userName  }}</h3></li>
-        <li><h3 class="sellerName" style="color: #007bff;">{{usersInfo }}</h3></li>
+        <li><a class="sellerName" style="color: #007bff;">{{userEmail }}</a></li>
+        <!-- <li><h3 class="sellerName" style="color: #007bff;">{{userName  }}</h3></li>
+        <li><h3 class="sellerName" style="color: #007bff;">{{usersInfo }}</h3></li> -->
+        <li><a routerLink="">Cart ({{cartItem}})</a></li>
         <li><a (click)="userlogout()">LogOut</a></li>
 
       
@@ -45,7 +46,7 @@
         <li><a routerLink="/seller-add-product">Add Product</a></li>
         <li><a (click)="logout()">LogOut</a></li>
         <!-- <li><h3 class="sellerName" style="color: #007bff;">{{sellerName  | titlecase}}</h3></li> -->
-        <li><h3 class="sellerName" style="color: #007bff;">{{sellerEmail  | titlecase}}</h3></li>
+        <li><a class="sellerName" style="color: #007bff;">{{sellerEmail  | titlecase}}</a></li>
         <!-- <li><a routerLink="/seller-home"></a></li> -->
         
     </ul>

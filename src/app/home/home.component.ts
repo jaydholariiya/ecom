@@ -13,9 +13,11 @@ import { addproductDataType } from '../data-type';
 })
 export class HomeComponent implements OnInit {
     images = [944, 1011, 984].map((n) => `https://picsum.photos/id/${n}/900/500`);
+    activeRoute: any;
     
   constructor(private product : ProductService) { }
   popularProduct : undefined | addproductDataType[];
+  getValue :undefined | addproductDataType;
   trend : undefined | addproductDataType[];
   ngOnInit(): void {
     this.product.popularProduct().subscribe((result)=>{
@@ -29,10 +31,19 @@ export class HomeComponent implements OnInit {
         
     })
 
+    let data = this.activeRoute.snapshot.paramMap.get('productId');
+    console.log("Product ID is " +data);
+   data && this.product.getPorduct(data).subscribe((result)=>{
+    console.warn(result);
+    this.getValue = result;
 
-  }
+  })
+}
+
 
   
 
+  
 
+   
 }

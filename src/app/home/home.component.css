@@ -1,3 +1,6 @@
+*{
+    font-family: Tahoma;
+}
 .slider{
     height: 100%;
     align-items: center;
@@ -49,7 +52,7 @@ img{
 }
 
 .tag{
-    font-family:'Courier New', Courier, monospace;
+    font-family:tahoma;
     font-weight: bold;
 }
 

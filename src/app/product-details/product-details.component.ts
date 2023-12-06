@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { addproductDataType } from '../data-type';
+import { addproductDataType, cart } from '../data-type';
 import { ProductService } from '../services/product.service';
 
 @Component({
@@ -9,8 +9,11 @@ import { ProductService } from '../services/product.service';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent implements OnInit {
+    
     getData : undefined | addproductDataType;
     productQua : number = 1;
+    removeCart = false;
+    // userId :String; 
   constructor(private activeRoute : ActivatedRoute , 
               private product : ProductService
     ) { }
@@ -26,6 +29,18 @@ export class ProductDetailsComponent implements OnInit {
     
    })
 
+   let cartData = localStorage.getItem('localCart');
+   if(data && cartData){
+    let item = JSON.parse(cartData);
+    item = item.filter((items : addproductDataType)=>data == items.id.toString())
+    if(item.length){
+        this.removeCart = true;
+    }
+    else{
+        this.removeCart = false;
+    }
+   }
+
    
 
   }
@@ -36,5 +51,31 @@ export class ProductDetailsComponent implements OnInit {
     else if(this.productQua < 20 && val == 'max'){
         this.productQua += 1;
     }
+  }
+
+  AddToCart(){
+    if(this.getData){
+        // console.warn(this.getData + "Data found");
+        this.getData.quantity = this.productQua;
+        if(localStorage.getItem('user')){
+        
+        console.warn(this.getData.quantity + "product");
+        this.product.localAddToCart(this.getData);
+        this.removeCart = true
+
+        let user = localStorage.getItem('user');
+        let userID = user && JSON.parse(user).id;
+        // console.log(userId);
+
+        let cartData : cart = {...this.getData, userID , productID : this.getData.id }
+        console.warn(cartData);
+        delete cartData.id;
+        } 
+        
+     }
+  }
+  RemoveToCart(id : number){
+    this.product.removeItemCard(id);
+    this.removeCart = false
   }
 }

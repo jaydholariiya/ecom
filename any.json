@@ -101,6 +101,18 @@
       "email": "user30@g.com",
       "password": "user30",
       "id": 17
+    },
+    {
+      "name": "user1",
+      "email": "user1@gmail.com",
+      "password": "user1",
+      "id": 18
+    },
+    {
+      "name": "jay",
+      "email": "jaydholariya2@gmail.com",
+      "password": "jay2",
+      "id": 19
     }
   ],
   "product": [
@@ -330,6 +342,12 @@
       "email": "love@g.com",
       "password": "love",
       "id": 25
+    },
+    {
+      "name": "user1",
+      "email": "user1@gmail.com",
+      "password": "user1",
+      "id": 26
     }
   ]
 }

@@ -16,7 +16,23 @@ export interface addproductDataType{
     image: string,
     name: string,
     price: number,
-    id:number
+    id:number,
+    quantity:undefined | number,
+   
+
+}
+
+export interface cart{
+    category: number,
+    color: string,
+    description: string,
+    image: string,
+    name: string,
+    price: number,
+    id:number | undefined,
+    quantity:undefined | number,
+    userID : number,
+    productID : number
    
 
 }
